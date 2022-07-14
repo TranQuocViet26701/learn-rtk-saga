@@ -1,9 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { studentApi } from 'api';
 import './App.css';
+import { Counter } from './features/counter/Counter';
+import logo from './logo.svg';
 
 function App() {
+  const fetchData = async () => {
+    // const data = await studentApi.getAll({
+    //   _page: 1,
+    //   _limit: 40,
+    //   _sort: 'mark',
+    //   _order: 'desc',
+    // });
+    // console.log(data);
+
+    const dataStudent = await studentApi.getById('r1QkPNN');
+    console.log(dataStudent);
+  };
+
+  fetchData();
+
   return (
     <div className="App">
       <header className="App-header">
